@@ -1,0 +1,41 @@
+This is the codebook that describes the variables in the tidyData data frame output from the "justDoIt()" function:
+
+  subject activity           measure        avg
+    (int)   (fctr)             (chr)      (dbl)
+1       1   LAYING fBodyAcc-mean()-X -0.9390991
+2       1   LAYING fBodyAcc-mean()-Y -0.8670652
+3       1   LAYING fBodyAcc-mean()-Z -0.8826669
+4       1   LAYING  fBodyAcc-std()-X -0.9244374
+5       1   LAYING  fBodyAcc-std()-Y -0.8336256
+6       1   LAYING  fBodyAcc-std()-Z -0.8128916
+> 
+
+subject (int) 
+-- Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30
+-- Data come from test/subject_test.txt and train/subject_train.txt
+-- No filters or clean-up have been applied to this variable
+-- Used in the group_by clause
+
+activity (factor)
+-- Name of the activity performed
+-- Sourced from activity_labels.txt
+-- Values:
+WALKING
+WALKING_UPSTAIRS
+WALKING_DOWNSTAIRS
+SITTING
+STANDING
+LAYING
+
+-- No filters or cleanup have been applied to this variable
+-- Used in the group_by clause
+
+measure (character)
+-- Name of the measurement (for more details read the README.txt in the UCI HAR dataset)
+-- Sourced from features.txt
+-- Filtered on mean() and std()
+-- Used in the group_by clause
+
+avg (numeric)
+-- Calculated from the measurements sourced from test\X_test.txt and train\X_train.txt datasets
+-- Contains the average (mean) values of measurements grouped by subject/activity/measure
